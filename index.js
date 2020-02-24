@@ -80,7 +80,7 @@ function makeSmartPerson(nameArg) {
   var smartPerson = {
     name: nameArg,
     sum: function (a, b) {return a+b},
-    speak: function () {return `Hello, my name is ${nameArg}`} 
+    speak: function () {return `Hello, my name is ${this.name}`} 
   }
   return smartPerson;
 }
@@ -144,7 +144,11 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  
+  const carMake = inventory[index].car_make;
+  const carModel = inventory[index].car_model;
+  console.log(`This is a ${carMake} ${carModel}.`)
+  return `This is a ${carMake} ${carModel}.`
 }
 
 /**
