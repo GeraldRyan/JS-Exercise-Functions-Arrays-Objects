@@ -299,38 +299,38 @@ function getGermanCars(inventory) {
     const cars = []
     var n = 0
     for (let i = 0; i < inventory.length; i++) {
-        if (inventory[i].car_make == "Audi" || inventory[i].car_make == "Volkswagen" || inventory[i].car_make == "Mercedes-Benz" || inventory[i].car_make == "BMW" ) {
+        if (inventory[i].car_make == "Audi" || inventory[i].car_make == "Volkswagen" || inventory[i].car_make == "Mercedes-Benz" || inventory[i].car_make == "BMW") {
             cars[n] = inventory[i]
             n += 1
         }
     }
-    console.log(cars)
+    // console.log(cars)
     return cars
 }
-getGermanCars(inventory)
+// getGermanCars(inventory)
 
 
-    /**
-     * ### Challenge refactor to arrow functions
-     * 
-     * @instructions
-     * Create arrow function versions of the following commented-out functions:
-     * 
-     * const sum = function (a, b) {
-     *   return a + b
-     * }
-     * 
-     * const addFive = function(num) {
-     *    return num + 5
-     * }
-     *
-     * const argTimesTwo = function (num) {
-     *   return num * 2
-     * }
-     */
-const sum =(a,b) => {a+b}
-const addFive = (num) => {num+5}
-const argTimesTwo = (num) => {num*2}
+/**
+ * ### Challenge refactor to arrow functions
+ * 
+ * @instructions
+ * Create arrow function versions of the following commented-out functions:
+ * 
+ * const sum = function (a, b) {
+ *   return a + b
+ * }
+ * 
+ * const addFive = function(num) {
+ *    return num + 5
+ * }
+ *
+ * const argTimesTwo = function (num) {
+ *   return num * 2
+ * }
+ */
+const sum = (a, b) => { a + b }
+const addFive = (num) => { num + 5 }
+const argTimesTwo = (num) => { num * 2 }
 
 /**
  * ### Challenge `carMaker`
@@ -345,9 +345,34 @@ const argTimesTwo = (num) => {num*2}
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
  */
-function carMaker( /* code here */ ) {
-    /* code here */
+function carMaker(odometer) {
+    const mileage = {
+        odometer: odometer,
+        drive: function(distance) {
+            this.odometer = distance + this.odometer
+            console.log(this.odometer)
+            return this.odometer
+        }
+    }
+    console.log(mileage)
+    return mileage
+
+
 }
+var myPorsche = carMaker(161000)
+console.log (`My current mileage is ${myPorsche.odometer} miles`)
+myPorsche.drive(150)
+myPorsche.drive(75)
+myPorsche.drive(82)
+console.log ("Vroom Vroom")
+console.log (myPorsche.odometer)
+console.log ("Let's drive some more")
+myPorsche.drive(82)
+console.log ("Oh no, here come the cops!")
+console.log("You're under arrest")
+console.log("Console Log Type Error 76!")
+
+
 
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
