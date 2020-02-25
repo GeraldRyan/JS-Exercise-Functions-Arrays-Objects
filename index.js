@@ -216,7 +216,7 @@ function getCarInfoById(inventory, id) {
 
     return `This is a ${carMake} ${carModel}`
 }
-getCarInfoById(inventory, 1) 
+getCarInfoById(inventory, 1)
 
 
 /**
@@ -227,12 +227,12 @@ getCarInfoById(inventory, 1)
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
  */
-function sortCarInventory( inventory ) {
-    
-  console.log(inventory.sort(inventory.car_model,inventory.car_model))
-return inventory.sort((a,b)=>(a.car_model>b.car_model) ? 1: -1 )
+function sortCarInventory(inventory) {
+
+    // console.log(inventory.sort((a,b)=>(a.car_model>b.car_model) ? 1: -1 ))  
+    return inventory.sort((a, b) => (a.car_model > b.car_model) ? 1 : -1)
 }
-sortCarInventory(inventory)
+// sortCarInventory(inventory)
 
 /**
  * ### Challenge `getModelYears`
@@ -243,9 +243,16 @@ sortCarInventory(inventory)
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
  */
-function getModelYears( /* code here */ ) {
-    /* code here */
+function getModelYears(inventory) {
+    const modelYears = []
+    for (let i = 0; i < inventory.length; i++) {
+        modelYears[i] = inventory[i].car_year
+    }
+    console.log(modelYears)
+    return modelYears
+
 }
+getModelYears(inventory)
 
 /**
  * ### Challenge `getOlderCars`
