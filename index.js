@@ -248,11 +248,11 @@ function getModelYears(inventory) {
     for (let i = 0; i < inventory.length; i++) {
         modelYears[i] = inventory[i].car_year
     }
-    console.log(modelYears)
+    // console.log(modelYears)
     return modelYears
 
 }
-getModelYears(inventory)
+// getModelYears(inventory)
 
 /**
  * ### Challenge `getOlderCars`
@@ -266,9 +266,23 @@ getModelYears(inventory)
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
  */
-function getOlderCars( /* code here */ ) {
-    /* code here */
+
+
+//  WHY IS THIS NOT ACCEPTED!!
+function getOlderCars(inventory, lastYear) {
+    const cars = []
+    let n = 0
+    for (let i = 0; i < inventory.length; i++) {
+        if (inventory[i].car_year <= lastYear) {
+            cars[n] = inventory[i]
+            n += 1
+        }
+    }
+    // console.log(cars)
+    return cars
 }
+getOlderCars(inventory, 1995)
+
 
 /**
  * ### Challenge `getGermanCars`
@@ -281,28 +295,37 @@ function getOlderCars( /* code here */ ) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
  */
-function getGermanCars( /* code here */ ) {
-    /* code here */
+function getGermanCars(inventory) {
+    const cars = []
+    var n = 0
+    for (let i = 0; i < inventory.length; i++) {
+        if (inventory[i].car_make == "Audi" || inventory[i].car_make == "Volkswagen" || inventory[i].car_make == "Mercedes-Benz" || inventory[i].car_make == "BMW" ) {
+            cars[n] = inventory[i]
+            n += 1
+        }
+    }
+    console.log(cars)
+    return cars
 }
-
-/**
- * ### Challenge refactor to arrow functions
- * 
- * @instructions
- * Create arrow function versions of the following commented-out functions:
- * 
- * const sum = function (a, b) {
- *   return a + b
- * }
- * 
- * const addFive = function(num) {
- *    return num + 5
- * }
- *
- * const argTimesTwo = function (num) {
- *   return num * 2
- * }
- */
+getGermanCars(inventory)
+    /**
+     * ### Challenge refactor to arrow functions
+     * 
+     * @instructions
+     * Create arrow function versions of the following commented-out functions:
+     * 
+     * const sum = function (a, b) {
+     *   return a + b
+     * }
+     * 
+     * const addFive = function(num) {
+     *    return num + 5
+     * }
+     *
+     * const argTimesTwo = function (num) {
+     *   return num * 2
+     * }
+     */
 const sum = null; // code here!
 const addFive = null; // code here!
 const argTimesTwo = null; // code here!
