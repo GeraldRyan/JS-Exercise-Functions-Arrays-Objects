@@ -57,6 +57,10 @@ var inventory = [
   { id: 50, car_make: "Lincoln", car_model: "Town Car", car_year: 1999 }
 ]
 
+
+// Try to export inventory for Node
+module.exports.inventory = inventory
+
 /* eslint-env mocha */
 if (typeof exports !== "undefined") {
   // IGNORE: Test/Env Detection Stuff //

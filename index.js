@@ -1,3 +1,7 @@
+// var misc = require("./data/inventory.js");
+// // var inventory = new inventoryImport;
+// console.log(misc.inventory[1])
+
 // ⭐️ Example Challenge start ⭐️
 
 /**
