@@ -213,33 +213,10 @@ function getCarInfoById(inventory, id) {
             break;
         }
     }
-    console.log(carMake)
-    console.log(carModel);
-    console.log(`This is a ${carMake} ${carModel}`)
 
     return `This is a ${carMake} ${carModel}`
 }
 getCarInfoById(inventory, 1) 
-
-// const carMake = inventory.find((item, id)=>{
-//   return id = id
-// }
-
-
-//   [inventory.length-1].car_make;
-// const carModel = inventory[inventory.length-1].car_model;
-// console.log(carModel)
-
-
-
-// return `This is a ${carMake} ${carModel}.`
-
-
-// const the3rd = inventory.find((item, index) => {
-//   return index === 2 // we use 2 because index is zero-based.
-// })
-// return `The car is a ${the3rd.car_make} ${the3rd.car_model}`
-
 
 
 /**
@@ -252,9 +229,10 @@ getCarInfoById(inventory, 1)
  */
 function sortCarInventory( inventory ) {
     
-
-
+  console.log(inventory.sort(inventory.car_model,inventory.car_model))
+return inventory.sort((a,b)=>(a.car_model>b.car_model) ? 1: -1 )
 }
+sortCarInventory(inventory)
 
 /**
  * ### Challenge `getModelYears`
